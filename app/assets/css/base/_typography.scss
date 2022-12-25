@@ -1,0 +1,19 @@
+/**
+ * Basic typography style for copy text
+ */
+ html {
+    font-size: (14*100/375)+vw;
+    @media(min-width: 576px) {
+        font-size: 21.5625px;
+    }
+}
+
+body {
+    color: #fff;
+    font-size: rem(14);
+    font-weight: 400;
+    font-family: $font-Montserrat;
+    // @include screen(mobile) {
+    //     font-size: rem(13);
+    // }
+}

@@ -1,0 +1,34 @@
+{# SHARE #}
+<div class="prizes-item">
+    <div class="prizes-item__inner">
+        <div class="prizes-item__thumbnail">
+            {% if reward.thumbnail.src %}
+                <a href="{{ reward.url }}"><img class="lozad" src="{{assets_url}}/images/dummy/145x145.png" data-src="{{ reward.thumbnail.src }}" alt="{{ reward.thumbnail.alt ? reward.thumbnail.alt : '' }}"/></a>
+            {% endif %}
+        </div>
+        <div class="prizes-item__detail">
+            <div class="prizes-item__bar">
+                <span class="process-bar js-process-bar" data-percent="{{ reward.in_stock * 100 / reward.total }}"></span>
+            </div>
+            <div class="prizes-item__text">
+                <p>
+                    Còn lại
+                    <b>{{ reward.in_stock|number_format(0,',','.') ~ ' / ' ~ reward.total|number_format(0,',','.') }}</b>
+                </p>
+            </div>
+            <h3 class="prizes-item__headline">
+                <a href="{{ reward.url }}">{{ reward.title }}</a>
+            </h3>
+        </div>
+        <div class="prizes-item__exchange">
+            <span class="text-points">
+                <b>{{ reward.cost|number_format(0,',','.') }}</b>điểm
+            </span>
+            {% set disabled = '' %}
+            {% if is_logged_in and (user.current_point < reward.cost or not reward.in_stock) %}
+                {% set disabled = '-disabled' %}
+            {% endif %}
+            <a class="exchange-btn {{ disabled }}" href="{{ reward.url }}">ĐỔI QUÀ</a>
+        </div>
+    </div>
+</div>

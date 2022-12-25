@@ -1,0 +1,49 @@
+.note-bottom {
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height : rem(48);
+    padding: rem(7) rem(20);
+    background-color: #f00d1a;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    &.active{
+        visibility: visible;
+        opacity: 1;
+        z-index: 7;
+    }
+    &__detail {
+        @include FontMontserrat;
+        font-size: rem(12);
+        font-weight: 700;
+        text-align: left;
+        line-height: 1.35;
+        margin: 0;
+        color: #fff;
+        padding-left: 15%;
+        padding-right: rem(25);
+        position: relative;
+        .ico{
+            height : 133%;
+            position: absolute;
+            top : rem(-3);
+            left : 0;
+        }
+    }
+    .ico-exit{
+        position: absolute;
+        top : 0;
+        bottom : 0;
+        right : rem(20);
+        margin : auto;
+        display: block;
+        cursor: pointer;
+        width: rem(12);
+        height : rem(12);
+        background: url("../images/icon/ico-exit.png") no-repeat center;
+        background-size: contain;
+    }
+}

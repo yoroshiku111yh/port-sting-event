@@ -1,0 +1,10 @@
+<div id="dome-home-slider-1" class="slider-dome__outer js-dome-wrapper">
+	<div class="slider-dome__inner js-dome-container">
+		{% for game in new_games %}
+			<div class="slider-dome__cell js-dome-item">
+				{% include '_components/card-skew.twig' with {game:game} %}
+			</div>
+		{% endfor %}
+	</div>
+	{% include '_components/home/dome/slider-card-dots.twig' %}
+</div>

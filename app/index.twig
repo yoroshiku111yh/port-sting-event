@@ -1,0 +1,84 @@
+{% extends "_layout/layout.twig" %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="{{assets_url}}/css/home.css">
+{% endblock %}
+{% block after_js %}
+	<script src="{{ assets_url }}/js/home.js"></script>
+{% endblock %}
+
+{% block page %}
+	<main>
+		<div class="bg-map-top block-max-width">
+			<img class="lozad" src="{{assets_url}}/images/dummy/750x1362.png" data-src="{{assets_url}}/images/bg/map-1.png"/>
+		</div>
+		<section class="s-top-banner top-banner block-max-width" data-spec="homeBanner">
+			<div class="top-banner__container">
+				<img class="text-chinh-phuc" src="{{assets_url}}/images/texts/text-chinh-phuc.png"/>
+				<div class="logo-sting">
+					<img class="js-tex-sting lozad" style="opacity : 0" data-src="{{assets_url}}/images/logo.png" src="{{assets_url}}/images/logo.png"/>
+					<div class="glitch-transparent js-glitch-logo"></div>
+				</div>
+				<div class="slogan">
+					<img style="opacity : 0" class="js-tex-slogan lozad" data-src="{{assets_url}}/images/slogan.png" src="{{assets_url}}/images/dummy/648x276.png"/>
+					<div class="glitch-slogan js-glitch-slogan"></div>
+				</div>
+				<a class="btn-pin-map">
+					<span class="ico-pin">
+						<img src="{{assets_url}}/images/icon/pin-1.png"/>
+					</span>
+					<p>ĐI THÔI!!!</p>
+				</a>
+			</div>
+		</section>
+
+		{% if new_games|length > 0 %}
+			<section class="s-dome slider-dome block-max-width">
+				<div class="slider-dome__container" data-spec="sliderDome">
+					{% include '_components/home/dome/slider-card-dome.twig' %}
+				</div>
+			</section>
+		{% endif %}
+
+		{% if old_games|length > 0 %}
+			<section class="s-location slider-location block-max-width">
+				{% include '_components/home/location/slider.twig' %}
+				<a href="{{ page_url.games }}" class="text-link">Xem tất cả</a>
+			</section>
+		{% endif %}
+
+		<div class="bg-map-2 block-max-width">
+			<div class="bg-map-2__wrapper">
+				<div class="bg-map-2__container">
+					{% include '_components/home/bg-map-2-line-svg.twig' %}
+					<span id="dot-run-1" class="dot-run"></span>
+					<img class="lozad" src="{{assets_url}}/images/dummy/750x1362.png" data-src="{{assets_url}}/images/bg/map-2.png"/>
+				</div>
+			</div>
+		</div>
+		<section class="s-sharing invite-block block-max-width">
+			{% include '_components/home/sharing.twig' %}
+		</section>
+		<section class="s-prizes block-max-width">
+			{% include '_components/home/prizes.twig' %}
+		</section>
+
+		{% if leaderboard|length > 0 %}
+			<section class="s-rank block-max-width">
+				{% include '_components/home/rank.twig' %}
+			</section>
+		{% endif %}
+
+		<div class="footer-bg block-max-width">
+			<img class="lozad" src="{{assets_url}}/images/dummy/375x319.png" data-src="{{assets_url}}/images/bg/bg-footer.png"/>
+		</div>
+		<div class="note-bottom js-note-parent block-max-width active" data-spec="notePopup">
+			<span class="ico-exit js-close-note"></span>
+			<div class="note-bottom__detail">
+				<img class="ico" src="{{assets_url}}/images/logo-circle-sting.png"/>
+				Các điểm đến cực chất đang được
+				<br/>
+				cập nhật liên tục! Đừng bỏ lỡ!
+			</div>
+		</div>
+	</main>
+{% endblock %}

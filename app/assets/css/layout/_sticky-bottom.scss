@@ -1,0 +1,21 @@
+.sticky-bottom {
+    height: rem(78);
+    $root : &;
+    &__container {
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background: #000;
+        padding: rem(20);
+        max-width: 575px;
+        &.-p0 {
+            padding: 0;
+        }
+    }
+    &.-h0 {
+        height: 0
+    }
+}

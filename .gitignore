@@ -1,0 +1,12 @@
+node_modules
+.tmp
+.DS_Store
+**/*/.DS_Store
+.vscode
+.idea
+*.zip
+**/*/*.zip
+.git
+app/_data/build
+app/assets/css/_sprites
+app/assets/css/_spritesSVG

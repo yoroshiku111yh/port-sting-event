@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;0,900;1,800&display=swap');
+
+$srcUTMNokia: "../fonts/UTMNokia/UTMNokia";
+
+@font-face {
+    font-family: "UTM Nokia";
+    src: url("#{$srcUTMNokia}.eot");
+    src: url("#{$srcUTMNokia}.eot?#iefix") format("embedded-opentype"), url("#{$srcUTMNokia}.woff2") format("woff2"),
+        url("#{$srcUTMNokia}.woff") format("woff"), url("#{$srcUTMNokia}.ttf") format("truetype"),
+        url("#{$srcUTMNokia}.svg#UTMNokia") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin FontUTMNokia {
+    font-family: "UTM Nokia", Arial, Helvetica, sans-serif;
+}
+
+$srcDelaGothicOne: "../fonts/DelaGothicOne-Regular/DelaGothicOne-Regular";
+
+@font-face {
+    font-family: "Dela Gothic One";
+    src: url("#{$srcDelaGothicOne}.eot");
+    src: url("#{$srcDelaGothicOne}.eot?#iefix") format("embedded-opentype"),
+        url("#{$srcDelaGothicOne}.woff2") format("woff2"), url("#{$srcDelaGothicOne}.woff") format("woff"),
+        url("#{$srcDelaGothicOne}.ttf") format("truetype"),
+        url("#{$srcDelaGothicOne}.svg#DelaGothicOne-Regular") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin FontDelaGothic {
+    font-family: "Dela Gothic One", Arial, Helvetica, sans-serif;
+}
+
+@mixin FontMontserrat {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}

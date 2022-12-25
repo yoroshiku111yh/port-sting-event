@@ -1,0 +1,9 @@
+.wrapper {
+    overflow: hidden;
+    @include screen(767px, true) {
+        display: none;
+    }
+    .is-mobile-device & {
+        display: block;
+    }
+}

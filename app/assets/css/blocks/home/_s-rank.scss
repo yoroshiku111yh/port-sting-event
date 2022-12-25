@@ -1,0 +1,155 @@
+.s-rank {
+    position: relative;
+    margin-top: rem(72);
+    z-index: 1;
+    .headline-utm {
+        text-align: right;
+        margin-right: 20px;
+    }
+    .pin-glow-animate {
+        top: rem(-54);
+        left: rem(-8);
+        // @media screen and (max-width: 374px) {
+        //     top: -27%;
+        //     left: -3%;
+        // }
+    }
+    &__decor {
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        top: rem(-124);
+        max-height: rem(264);
+        height: 70.4vw;
+        left: 0;
+        // @media screen and (max-width: 374px) {
+        //     top: -52%;
+        // }
+        .svg-rank-line {
+            max-width: rem(375);
+            max-height: rem(264);
+            width: 100vw;
+            height: 69vw;
+            position: absolute;
+            left: rem(-19);
+            top: rem(3);
+            opacity: 0;
+            // @media screen and (max-width: 374px) {
+            //     left: -6%;
+            //     top: 1%;
+            // }
+        }
+        .dash-line-decor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+        .plus-decor {
+            position: absolute;
+            top: rem(80);
+            left: rem(339);
+            // @media screen and (max-width: 374px) {
+            //     top: 30%;
+            //     left: 90%;
+            // }
+        }
+    }
+}
+
+.rank-list {
+    &__container {
+        margin-left: 20px;
+        margin-top: rem(38);
+        position: relative;
+    }
+    &__ul {
+        list-style-type: none;
+        display: block;
+        margin: 0;
+        margin-bottom: rem(23);
+        padding: 0;
+        width: 100%;
+        background-color: #f00d1a;
+        li {
+            position: relative;
+            display: block;
+            font-size: 0;
+            border-bottom: 1px solid #fff;
+            padding-left: rem(59);
+            &:after {
+                position: absolute;
+                content: "";
+                display: block;
+                top: rem(-11.5);
+                left: rem(7);
+                width: rem(54);
+                height: rem(69);
+                background-size: contain !important;
+            }
+            &.rank-gold {
+                &:after {
+                    background: url("../images/icon/rank-1.png") no-repeat top center;
+                }
+            }
+            &.rank-silver {
+                &:after {
+                    background: url("../images/icon/rank-2.png") no-repeat top center;
+                }
+            }
+            &.rank-bronze {
+                &:after {
+                    background: url("../images/icon/rank-3.png") no-repeat top center;
+                }
+            }
+            &:last-child {
+                border-bottom: 0px solid transparent;
+            }
+            .name {
+                display: inline-block;
+                width: 50%;
+                @include FontMontserrat;
+                font-size: rem(14);
+                line-height: 1.35;
+                color: #fff;
+                font-weight: 800;
+                text-align: left;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin: 0;
+                padding: rem(12) 0px;
+            }
+            .points {
+                display: inline-block;
+                width: 50%;
+                @include FontMontserrat;
+                line-height: 1.35;
+                font-size: rem(14);
+                color: #fff;
+                font-weight: 600;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin: 0;
+                padding: rem(12) 0px;
+                padding-left: 8%;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+.dot-run {
+    width: rem(7);
+    height: rem(7);
+    border-radius: 50%;
+    background-color: #f00d1a;
+    z-index: 2;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 13px 4px rgba(240, 13, 26, 1);
+    -moz-box-shadow: 0px 0px 13px 4px rgba(240, 13, 26, 1);
+    box-shadow: 0px 0px 13px 4px rgba(240, 13, 26, 1);
+}

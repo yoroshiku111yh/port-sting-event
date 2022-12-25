@@ -1,0 +1,22 @@
+.banner-glitch-slogan{
+    background: url("../images/bg/bg-slogan.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    min-height : rem(196);
+    &__outer{
+        position: absolute;
+        top: 20%;
+        left: 9%;
+        width: 83%;
+        overflow: hidden;
+        & > img{
+            width : 100%;
+            height : auto;
+            position: relative;
+        }
+    }
+    .glitch-image-line{
+        background-size: contain !important;
+    }
+}

@@ -1,0 +1,86 @@
+{# SHARED #}
+<header data-module="header realVh previewImage" class="block-max-width header">
+	<div class="header__container ">
+		<div class="header__hbg-button">
+			<span class="line line1"></span>
+			<span class="line line2"></span>
+			<span class="line line3"></span>
+		</div>
+		<img id="logo" src="{{assets_url}}/images/logo.png" />
+		<span class="header-points">
+			{# {% if is_logged_in %}
+				<p>{{ user.current_point|number_format(0,',','.') }} điểm</p>
+			{% else %} #}
+				<p><a href="#" class="btn-common">Đăng nhập</a></p>
+			{# {% endif %} #}
+		</span>
+	</div>
+	<div class="header__dropdown main-menu">
+		{# {% if is_logged_in %}
+			<div class="text-center">
+				<form class="main-menu__profile" onsubmit="return;">
+					{{ update_avatar_nonce }}
+					<div class="main-menu__profile__avatar">
+						{% if user.custom_avatar %}
+							<img class="avatar" id="js-image" src="{{ user.custom_avatar }}"/>
+						{% else %}
+							<img class="avatar" id="js-image" src="{{ assets_url }}/images/user/no-avatar.jpg"/>
+						{% endif %}
+						<input class="js-image-input hide-section" type='file' accept="image/*" name='avatar-file' id="imgInp" onchange="change_avatar()"/>
+						<img class="photo " src="{{ assets_url }}/images/icon/profile-photo.svg" alt="">
+					</div>
+					<div class="main-menu__profile__detail">
+						<h3 class="main-menu__profile__detail__name">{{ user.nickname }}</h3>
+						<p><b>{{ user.current_point|number_format(0,',','.') }} điểm</b></p>
+						<p class="main-menu__profile__detail__btn"><a href="{{ page_url.reward }}" class="btn-common">Đổi quà</a></p>
+					</div>
+				</form>
+			</div>
+			<div class="main-menu__list">
+				<ul class="">
+					<li><a href="{{ page_url.profile }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-1.svg" alt="">
+						<span>Thiết lập tài khoản</span>
+					</a></li>
+					<li><a href="{{ page_url.game_history }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-2.svg" alt="">
+						<span>Lịch sử chơi game</span>
+					</a></li>
+					<li><a href="{{ page_url.reward_history }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-3.svg" alt="">
+						<span>Lịch sử đổi quà</span>
+					</a></li>
+					<li><a href="{{ page_url.score_history }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-4.svg" alt="">
+						<span>Lịch sử điểm</span>
+					</a></li>
+					<li><a href="{{ page_url.support }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-5.svg" alt="">
+						<span>Trung tâm hỗ trợ</span>
+
+					</a></li>
+					<li><a href="{{ page_url.share_to_earn }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-6.svg" alt="">
+						<span>Mời bạn cùng vui</span>
+					</a></li>
+					<li><a href="{{ page_url.logout }}">
+						<img src="{{ assets_url }}/images/menu/icon-menu-7.svg" alt="">
+						<span>Đăng xuất</span>
+					</a></li>
+				</ul>
+			</div>
+		{% else %} #}
+			<div class="text-center">
+				<form class="main-menu__profile" onsubmit="return">
+					<div class="main-menu__profile__avatar">
+						<img class="avatar" id="js-image" src="{{ assets_url }}/images/user/no-avatar.jpg"/>
+					</div>
+					<div class="main-menu__profile__detail">
+						<p class="main-menu__profile__detail__text"><b>Đăng nhập ngay, </br>nhận quà hấp dẫn</b></p>
+						<p class="main-menu__profile__detail__btn"><a href="{{ page_url.login }}" class="btn-common">Đăng nhập ngay</a></p>
+					</div>
+				</form>
+			</div>
+		{# {% endif %} #}
+	</div>
+</header>

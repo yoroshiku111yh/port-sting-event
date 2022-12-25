@@ -1,0 +1,34 @@
+.points-circle{
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 2%;
+    font-size: 0;
+    &:after{
+        display: inline-block;
+        vertical-align: middle;
+        height : 100%;
+        width: 0;
+        content :'';
+    }
+    & > div{
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        padding: 25% rem(2);
+        box-sizing: border-box;
+        text-align: center;
+    }
+    p{
+        @include FontMontserrat;
+        font-weight: 900;
+        line-height: 1.35;
+        color : #000;
+        margin :0;
+        text-align: center;
+    }
+}

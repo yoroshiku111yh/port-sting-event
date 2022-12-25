@@ -1,0 +1,43 @@
+.text-link {
+    display: inline-block;
+    color: #fff;
+    @include FontMontserrat;
+    font-weight: 700;
+    font-size: rem(14);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.35s ease-in-out;
+    white-space: nowrap;
+    &.bg-shadow {
+        &:before {
+            content: "";
+            display: block;
+            z-index: -1;
+            position: absolute;
+            background: #000000;
+            filter: blur(20px);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 3px;
+        height: 1px;
+        background-color: #fff;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transition: all 0.35s ease-in-out;
+    }
+    &:hover {
+        color: #f00d1a;
+        &:after {
+            background-color: #f00d1a;
+        }
+    }
+}

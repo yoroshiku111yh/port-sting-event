@@ -1,0 +1,20 @@
+<div class="s-prizes__detail">
+	<span class="pin-glow-animate"></span>
+	<h3 class="headline-utm">
+		Săn điểm CAO<br/>
+		đổi quà CHẤT
+	</h3>
+	<img class="lozad first-prizes" src="{{assets_url}}/images/dummy/335x223.png" data-src="{{assets_url}}/images/son-doong.png"/>
+	<a href="{{ page_url.term }}" class="text-link">Tìm hiểu thể lệ</a>
+</div>
+
+{% if rewards|length > 0 %}
+	<div class="s-prizes__slider-container">
+		<div class="s-prizes__slider" data-spec="FlickitySlideInstant sectionPrizes" data-flickity='{ "cellAlign" : "center", "groupCells" : true, "pageDots" : false, "prevNextButtons" : false }'>
+			{% for reward in rewards %}
+				{% include '_components/prizes-item.twig' %}
+			{% endfor %}
+		</div>
+		<a href="{{ page_url.term }}" class="text-link bg-shadow">Xem tất cả</a>
+	</div>
+{% endif %}

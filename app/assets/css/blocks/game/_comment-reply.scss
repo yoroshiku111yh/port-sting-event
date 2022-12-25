@@ -1,0 +1,39 @@
+.comment-reply {
+    margin-top: rem(10);
+    padding-left: rem(20);
+    &__total {
+        font-size: rem(12);
+        color: #BDBDBD;
+    }
+    &__icon {
+        display: inline-block;
+        width: rem(14);
+        height: rem(12);
+        vertical-align: middle;
+        margin-right: rem(7);
+        background: url('../images/game/comments-reply.svg') center no-repeat;
+    }
+    &__listing {
+        border-left: 1px solid #fff;
+        margin-left: rem(3);
+        margin-top: rem(11);
+        padding-left: rem(20);
+    }
+    &__item {
+        margin-top: rem(17);
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__item-user {
+        font-weight: bold;
+    }
+    &__item-content {
+        margin-top: rem(5);
+    }
+    &__view-more, &__view-less {
+        font-weight: bold;
+        text-decoration: underline;
+        margin-top: rem(17);
+    }
+}

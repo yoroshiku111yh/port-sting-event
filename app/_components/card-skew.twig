@@ -1,0 +1,33 @@
+{# SHARE #}
+{% if game %}
+<div class="card-skew js-slider-location-item {{ game.is_played ? 'disabled -completed' : '' }}">
+    <h3 class="card-skew-headline">
+        <span class="card-skew-headline__wrapper">
+            {{ game.title }}
+        </span>
+    </h3>
+    <div class="card-skew-container">
+        <div class="card-skew-container__size"></div>
+        <div class="card-skew-container__inner">
+            <div class="card-skew-container__mask">
+                {% if game.thumbnail.src %}
+                    <img class="lozad" src="{{assets_url}}/images/dummy/145x160.png" data-src="{{ game.thumbnail.src }}" alt="{{ game.thumbnail.alt ? game.thumbnail.alt : '' }}"/>
+                {% endif %}
+            </div>
+            {% if not game.is_played %}
+                <span class="points-circle">
+                    <div>
+                        <p>+{{ game.is_old ? game.late_point|number_format(0,',','.') : game.early_point|number_format(0,',','.') }}</p>
+                        <p>điểm</p>
+                    </div>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+    <a href="{{ game.url }}" class="card-skew-btn js-dome-href {{ game.is_played ? 'disabled' : '' }}">
+        <p>
+            {{ game.is_played ? 'Xem chi tiết' : 'Chinh phục ngay!' }}
+        </p>
+    </a>
+</div>
+{% endif %}

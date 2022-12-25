@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="#">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">
+
+    {{ wp_head }}
+
+    <link rel="stylesheet" href="{{assets_url}}/css/app.css">
+    {% block stylesheet %}{% endblock %}
+
+    {# {% if dev == true %} #}
+    <script type="text/javascript" src="{{ assets_url }}/misc/jquery/jquery.js"></script>
+    {# {% endif %} #}
+</head>
+
+<body>
+    <div class="wrapper" data-module="lazyload detectDevice">
+
+    {# {% include '_layout/header.twig' %} #}
+    <!-- ... the rest of the HTML page ... -->
+    {% block page %}{% endblock %}
+    <!-- ... -->
+    {% include '_layout/footer.twig' %}
+
+    </div><!--wrapper -->
+
+    {% set varsPopupMessage = {
+        popup_id: "popup_message",
+        title : "Thông báo",
+        close_button_text: "ĐÓNG",
+        content: ""
+    } %}
+    {# {% include '_components/popup.twig' with varsPopupMessage %}
+
+    {% include '_components/notification.twig' with { id : "notification_success", modified_class:"-success", content:"Thiết lập tài khoản thành công!"} %} #}
+
+    {% include '_components/banner-desktop.twig' %}
+
+    {% block before_js %}{% endblock %}
+
+    {% if dev == true %}
+    <script src="{{assets_url}}/js/runtime.js"></script>
+    {% endif %}
+    <script src="{{assets_url}}/js/vendor.js"></script>
+    <script src="{{assets_url}}/js/app.js"></script>
+
+	{{ wp_footer }}
+
+    {% block after_js %}{% endblock %}
+
+</body>
+
+</html>

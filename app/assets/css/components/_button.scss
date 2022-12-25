@@ -1,0 +1,159 @@
+
+.btn-pin-map {
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    padding: rem(3);
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover{
+        p{
+            color : #f00d1a;
+            transition: 0.25s all ease-in-out;
+        }
+    }
+    &:after{
+        content : '';
+        display: block;
+        position: absolute;
+        top : 0;
+        left : 2%;
+        width: 100%;
+        height : 100%;
+        background: url("../images/bg/brush-gray-1.png") no-repeat center ;
+        background-size: contain;
+    }
+    .ico-pin {
+        z-index: 1;
+        position: absolute;
+        display: block;
+        top: -20%;
+        left: 1%;
+        width: 45%;
+        img {
+            width: 100%;
+        }
+    }
+    p {
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        display: block;
+        @include FontMontserrat;
+        font-weight: 800;
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
+
+
+.sharing-btn{
+    position: relative;
+    font-size: 0;
+    text-align: left;
+    &__main{
+        display: inline-block;
+        width : rem(263);
+        max-width: rem(311);
+        background-color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        height : rem(46);
+        box-sizing: border-box;
+        padding-top: rem(14);
+        transition: 0.35s all ease-in-out;
+        // &:hover{
+        //     background-color: #2a0709;
+        //     p{
+        //         color : #fff;
+        //         .ico.-fb{
+        //             path{
+        //                 fill : #fff
+        //              }
+        //         }
+        //     }
+        // }
+        p{
+            @include FontMontserrat;
+            font-size: rem(13);
+            font-weight: 800;
+            position: relative;
+            color : #F00D1A;
+            text-transform: uppercase;
+            margin : 0;
+            line-height: 1.35;
+            padding-left: 7%;
+            .ico{
+                position: absolute;
+                &.-fb{
+                    width: rem(10);
+                    height: rem(18);
+                    top: 0;
+                    left: 14%;
+                    path {
+                        fill : #F00D1A;
+                    }
+                }
+            }
+        }
+    }
+    &__ico{
+        display: inline-block;
+        position: relative;
+        width : rem(46);
+        height : rem(46);
+        margin-left : rem(2);
+        text-align: center;
+        font-size: 0;
+        background-color: #fff;
+        vertical-align: middle;
+        // &:hover{
+        //     background-color: #2a0709;
+        //     .ico.-multi-socials{
+        //         path{
+        //            fill : #fff
+        //         }
+        //     }
+        // }
+        .ico{
+            position: absolute;
+            top : 0;
+            left : 0;
+            right : 0;
+            bottom : 0;
+            z-index: 1;
+            margin : auto;
+            &.-multi-socials{
+                width : rem(18);
+                height : rem(18);
+                path {
+                    fill : #F00D1A;
+                }
+            }
+        }
+    }
+}
+.btn-common {
+    font-weight: 800;
+    font-size: rem(10);
+    line-height: (12/10);
+    background: #F00D1A;
+    color: #fff;
+    padding: rem(10) rem(22);
+    text-transform: uppercase;
+    border : 0px solid transparent;
+    display: inline-block;
+    &.-white {
+        background: #fff;
+        color: $color-primary;
+    }
+    &.-full {
+        width: 100%;
+        padding: rem(17) rem(20);
+        font-size: rem(13);
+    }
+    &:disabled, &.-disabled {
+        background: #BDBDBD;
+        color: #fff;
+    }
+}

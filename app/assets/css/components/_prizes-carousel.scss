@@ -1,0 +1,11 @@
+.prizes-carousel {
+    font-size: 0;
+    &__cell {
+        width: rem(145);
+        margin-right: rem(15);
+        display: inline-block;
+    }
+    .flickity-viewport {
+        overflow: visible;
+    }
+}

@@ -1,0 +1,61 @@
+.comments {
+    font-size: rem(14);
+    line-height: (20/14);
+    padding-bottom: rem(20);
+    &__input {
+        textarea {
+            width: 100%;
+            background: #333333;
+            color: #fff;
+            border: 0;
+            padding: rem(14) rem(15) 0;
+            height: auto;
+            @include placeholder {
+                color: #fff;
+            };
+        }
+    }
+    &__listing {
+        margin-top: rem(7);
+    }
+    &__item {
+        margin-top: rem(17);
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__item-user {
+        font-weight: bold;
+    }
+    &__item-content {
+        margin-top: rem(5);
+    }
+    &__view-more {
+        text-align: center;
+        position: relative;
+        font-size: rem(12);
+        font-weight: bold;
+        padding: rem(10);
+        margin-top: rem(25);
+        span {
+            display: inline-block;
+            width: rem(15);
+            height: rem(9);
+            background: url('../images/game/comments-view-more.svg') center no-repeat;
+            position: absolute;
+            left: 50%;
+            bottom:rem(-5);
+            transform: translateX(-50%);
+        }
+        p {
+            margin: 0;
+        }
+        &.-reversed {
+            span {
+                transform: translateX(-50%) rotate(180deg);
+                top: rem(-5);
+                bottom: auto;
+            }
+        }
+    }
+}
